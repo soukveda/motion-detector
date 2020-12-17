@@ -65,6 +65,9 @@ while True:
     # append the current status to the status list
     status_list.append(status)
 
+    # keep two relevant data points and remove the remaining; saves memory
+    status_list = status_list[-2:]
+    
     # check the status list to see if a motion was detected; change from 0-1 or 1-0
     if status_list[-1]==1 and status_list[-2]==0:
         # record the time that the change occured
